@@ -5,7 +5,7 @@ import Input from "../ui/Input";
 const Form = () => {
   return (
     <>
-      <div className="backdrop-blur-xl bg-white/20 rounded-md h-3/4 xl:w-3/4  sm:w-fit">
+      <div className="backdrop-blur-xl bg-white/20 rounded-md xl:w-3/4 pb-10   sm:w-fit h-fit">
         <form className="w-full  p-6 rounded-md flex flex-col justify-start gap-5 text-white">
           <label htmlFor="nombre" className="flex flex-col">
             Nombre
