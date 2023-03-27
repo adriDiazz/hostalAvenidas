@@ -2,10 +2,6 @@ import React from "react";
 import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
 import style from "./Mapa.module.css";
 
-const containerStyle = {
-  width: "400px",
-  height: "400px",
-};
 const center = {
   lat: 40.210049268371776,
   lng: -3.5791675846561755,
@@ -30,7 +26,9 @@ function Mapa() {
       </>
     </GoogleMap>
   ) : (
-    <></>
+    <>
+      <h1>Cargando mapa...</h1>
+    </>
   );
 }
 
