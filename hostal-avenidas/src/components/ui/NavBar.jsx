@@ -4,7 +4,7 @@ const NavBar = () => {
   return (
     <>
       <header>
-        <nav className="flex justify-between items-center text-white font-thin p-4 xl:px-20 pt-4 ">
+        <nav className="flex justify-between items-center text-white font-thin p-4 w-full xl:px-20 pt-4 ">
           <h1 className=" xl:pl-20">Hostal Avenidas</h1>
           <ul className="flex gap-8 text-white justify-center items-center">
             <li className="hidden md:inline">

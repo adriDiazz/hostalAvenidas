@@ -19,7 +19,7 @@ const HomePage = () => {
             width: "100%",
           }}
         >
-          <div className="bg-black bg-opacity-70 w-screen sm:min-h-screen xl:h-screen md:h-screen">
+          <div className="bg-black bg-opacity-70  w-full sm:min-h-screen xl:h-screen md:h-screen">
             <NavBar />
             <Header />
             <AiOutlineArrowDown className="hidden md:block text-white text-5xl animate-bounce absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-10" />
@@ -27,7 +27,7 @@ const HomePage = () => {
         </div>
         {/* <div className="w-screen h-screen"> */}
         <section className="h-full">
-          <div className="w-screen min-h-1/2 p-7">
+          <div className="w-full min-h-1/2 p-7">
             <h2 className="text-3xl font-bold pb-6 mt-5">
               ¿Buscas un hostal cerca del parque Warner?
             </h2>
@@ -103,7 +103,7 @@ const HomePage = () => {
         </section>
         <section>
           <div className="h-screen w-screen mt-14 md:h-full">
-            <div className="flex flex-col p-4 gap-10 md:flex-row-reverse justify-evenly items-start">
+            <div className="flex flex-col p-4 gap-10 md:flex-row-reverse justify-around items-start">
               <Mapa />
               <div className="flex flex-col justify-center items-start gap-2">
                 <img src="ubi.svg" alt="" />

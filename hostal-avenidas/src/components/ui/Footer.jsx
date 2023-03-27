@@ -2,7 +2,7 @@ const Footer = () => {
   return (
     <>
       <div className="w-screen h-full bg-[#FEE0AE]">
-        <div className="flex justify-evenly items-start p-5 font-thin">
+        <div className="flex justify-around items-start p-5 font-thin">
           <div className="">
             <h4 className="text-2xl">Enlaces de interés</h4>
             <ul className="p-1">
