@@ -104,7 +104,7 @@ const HomePage = () => {
         <section>
           <div className="h-screen w-screen mt-14 md:h-full">
             <div className="flex flex-col p-4 gap-10 md:flex-row-reverse justify-evenly items-start">
-              {/* <Mapa /> */}
+              <Mapa />
               <div className="flex flex-col justify-center items-start gap-2">
                 <img src="ubi.svg" alt="" />
                 <h4 className="">¿DONDE ESTAMOS?</h4>
