@@ -102,15 +102,15 @@ const HomePage = () => {
           </section>
         </section>
         <section>
-          <div className="h-screen w-screen mt-14">
-            <div className="flex flex-col p-4 gap-10">
+          <div className="h-screen w-screen mt-14 md:h-full">
+            <div className="flex flex-col p-4 gap-10 md:flex-row-reverse justify-evenly items-start">
               <Mapa />
-              <div className="flex flex-col justify-center items-start">
+              <div className="flex flex-col justify-center items-start gap-2">
                 <img src="ubi.svg" alt="" />
                 <h4 className="">¿DONDE ESTAMOS?</h4>
                 <span>C/Alcade Enrique Galvez, 10 28330 Madrid(España)</span>
               </div>
-              <div className="flex flex-col-reverse justify-center items-start">
+              <div className="flex flex-col justify-center items-start gap-2">
                 <img src="clock.svg" alt="" />
                 <h4 className="flex items-end">DISPONIBLE 24/7</h4>
                 <span>91 894 60 30</span>
@@ -120,8 +120,9 @@ const HomePage = () => {
           </div>
         </section>
       </main>
-
-      <Footer />
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 };
