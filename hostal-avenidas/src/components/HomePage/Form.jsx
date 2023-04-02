@@ -1,24 +1,24 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import useFormLocalStorage from "../../hooks/useFormLocalStorage";
 import Button from "../ui/Button";
 import Input from "../ui/Input";
+import { handleFormValidation } from "../../utils/errors";
 
 const Form = () => {
-  const [formData, setFormData] = useState({
-    nombre: "",
+  const [form, handleFormChange, handleFormSubmit] = useFormLocalStorage({
+    name: "",
     checkIn: "",
     checkOut: "",
-    people: 0,
+    people: "",
   });
 
-  const handleFormChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
   return (
     <>
       <div className="backdrop-blur-xl bg-white/20 rounded-md xl:w-3/4 pb-10   sm:w-fit h-fit">
         <form
           className="w-full  p-6 rounded-md flex flex-col justify-start gap-5 text-white"
-          onSubmit={(e) => {}}
+          onSubmit={(e) => handleFormSubmit(e, true, "/reservation")}
         >
           <label htmlFor="name" className="flex flex-col">
             Nombre
@@ -29,6 +29,8 @@ const Form = () => {
               id="name"
               onChange={handleFormChange}
               className="text-gray-400"
+              required
+              error={handleFormValidation(form).name}
             />
           </label>
           <div className="flex justify-between items-center">
@@ -41,6 +43,8 @@ const Form = () => {
                 className="w-3/4 text-gray-400"
                 placeholder="Check in"
                 onChange={handleFormChange}
+                required
+                error={handleFormValidation(form).checkIn}
               />
             </label>
 
@@ -53,6 +57,8 @@ const Form = () => {
                 className="w-3/4 text-gray-400"
                 placeholder="Check out"
                 onChange={handleFormChange}
+                required
+                error={handleFormValidation(form).checkOut}
               />
             </label>
           </div>
@@ -60,14 +66,27 @@ const Form = () => {
             Numero de personas
             <Input
               type="number"
+              min="1"
               name="people"
               placeholder="Cuantas personas sois?"
               id="people"
               onChange={handleFormChange}
               className="text-gray-400"
+              required
+              error={handleFormValidation(form).people}
             />
           </label>
-          <Button className="py-4">Reservar</Button>
+          <Button
+            className="py-4 hover:bg"
+            disabled={
+              handleFormValidation(form).name ||
+              handleFormValidation(form).checkIn ||
+              handleFormValidation(form).checkOut ||
+              handleFormValidation(form).people
+            }
+          >
+            Reservar
+          </Button>
         </form>
       </div>
     </>
